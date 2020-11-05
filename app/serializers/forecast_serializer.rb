@@ -2,11 +2,13 @@ class ForecastSerializer
   include FastJsonapi::ObjectSerializer
   set_id { nil }
   attribute :current_weather do |data|
-    # require "pry"; binding.pry
+    today = Time.at(data[:current][:dt])
+    sun = Time.at(data[:current][:sunrise])
+    set = Time.at(data[:current][:sunset])
       {
-        'datetime': Time.at(data[:current][:dt]),
-        'sunrise': Time.at(data[:current][:sunrise]),
-        'sunset': Time.at(data[:current][:sunset]),
+        'datetime': "#{today.year}-#{today.month}-#{today.day} #{today.hour}:#{today.min}:#{today.sec}",
+        'sunrise': "#{sun.year}-#{sun.month}-#{sun.day} #{sun.hour}:#{sun.min}:#{sun.sec}",
+        'sunset': "#{set.year}-#{set.month}-#{set.day} #{set.hour}:#{set.min}:#{set.sec}",
         'temperature': data[:current][:temp],
         'feels_like': data[:current][:feels_like],
         'humidity': data[:current][:humidity],
@@ -19,15 +21,17 @@ class ForecastSerializer
 
   attribute :daily_weather do |data|
     self.hash_it(data[:daily])
-    require "pry"; binding.pry
   end
 
     def self.hash_it(data)
       data.map do |info|
+        today = Time.at(info[:dt])
+        sun = Time.at(info[:sunrise])
+        set = Time.at(info[:sunset])
           {
-            'date': Time.at(info[:dt]),
-            'sunrise': Time.at(info[:sunrise]),
-            'sunset': Time.at(info[:sunset]),
+            'date': "#{today.year}-#{today.month}-#{today.day} #{today.hour}:#{today.min}:#{today.sec}",
+            'sunrise': "#{sun.year}-#{sun.month}-#{sun.day} #{sun.hour}:#{sun.min}:#{sun.sec}",
+            'sunset': "#{set.year}-#{set.month}-#{set.day} #{set.hour}:#{set.min}:#{set.sec}",
             'max_temp': info[:temp][:max],
             'min_temp': info[:temp][:min],
             'conditions': info[:weather][0][:description],

@@ -9,7 +9,6 @@
           1,
           1,
           1,
-          0,
           null,
           null,
           null,
@@ -52,12 +51,29 @@
           null,
           1,
           1,
-          8,
-          8,
-          8,
-          8,
           null,
           null,
+          1,
+          1,
+          5,
+          5,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          48,
+          48,
           null,
           null,
           null,
@@ -102,6 +118,27 @@
           null
         ]
       },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/forecast.rb": {
+        "lines": [
+          1,
+          1,
+          48,
+          3,
+          0,
+          null,
+          3,
+          null,
+          null,
+          45,
+          38,
+          null,
+          7,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/application_record.rb": {
         "lines": [
           0,
@@ -112,6 +149,6 @@
         }
       }
     },
-    "timestamp": 1604614995
+    "timestamp": 1604617634
   }
 }

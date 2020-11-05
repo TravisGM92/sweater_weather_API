@@ -8,36 +8,36 @@ describe 'Forecast API' do
     expect(response).to be_successful
 
     forecast = JSON.parse(response.body)
-    require "pry"; binding.pry
+    # require "pry"; binding.pry
 
     expect(forecast['data']['id']).to be_nil
-    expect(forecast['type']).to eq('forecast')
+    expect(forecast['data']['type']).to eq('forecast')
 
-    expect(forecast['data']['attributes']).to have_key('current_weather')
     #current_weather
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('datetime')
-    exepect(forecast['data']['attributes']['current_weather']['date_time']).to be_a(String)
+    expect(forecast['data']['attributes']).to have_key('current_weather')
+    expect(forecast['data']['attributes']['current_weather']).to have_key('datetime')
+    expect(forecast['data']['attributes']['current_weather']['datetime']).to be_a(String)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('temperature')
-    exepect(forecast['data']['attributes']['current_weather']['temperature']).to be_a(Float)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('temperature')
+    expect(forecast['data']['attributes']['current_weather']['temperature']).to be_a(Float)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('feels_like')
-    exepect(forecast['data']['attributes']['current_weather']['feels_like']).to be_a(Float)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('feels_like')
+    expect(forecast['data']['attributes']['current_weather']['feels_like']).to be_a(Float)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('humidity')
-    exepect(forecast['data']['attributes']['current_weather']['humidity']).to be_a(Float)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('humidity')
+    expect(forecast['data']['attributes']['current_weather']['humidity']).to_not be_a(String)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('uvi')
-    exepect(forecast['data']['attributes']['current_weather']['uvi']).to be_a(Float)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('uvi')
+    expect(forecast['data']['attributes']['current_weather']['uvi']).to be_a(Float)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('visibility')
-    exepect(forecast['data']['attributes']['current_weather']['visibility']).to be_a(Float)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('visibility')
+    expect(forecast['data']['attributes']['current_weather']['visibility']).to_not be_a(String)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('conditions')
-    exepect(forecast['data']['attributes']['current_weather']['conditions']).to be_a(String)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('conditions')
+    expect(forecast['data']['attributes']['current_weather']['conditions']).to be_a(String)
 
-    exepect(forecast['data']['attributes']['current_weather']).to have_key('icon')
-    exepect(forecast['data']['attributes']['current_weather']['icon']).to be_a(String)
+    expect(forecast['data']['attributes']['current_weather']).to have_key('icon')
+    expect(forecast['data']['attributes']['current_weather']['icon']).to be_a(String)
 
     # expect(data['attributes']).to have_key('merchant_id')
     # expect(data['attributes']['merchant_id']).to be_an(Integer)

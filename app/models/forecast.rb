@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Forecast
   def self.get_direction(numb)
     if numb < 180

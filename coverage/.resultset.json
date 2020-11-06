@@ -1,146 +1,161 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/forecast/search_controller.rb": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/forecast.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null
         ]
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/forecast_serializer.rb": {
         "lines": [
-          1,
-          1,
-          5,
-          1,
-          4,
-          4,
-          4,
-          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          4,
-          20,
-          20,
-          20,
-          20,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          4,
-          192,
-          192,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/forecast_facade.rb": {
         "lines": [
-          1,
-          1,
-          4,
-          4,
-          null,
-          null
-        ]
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/forecast/search_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/geo_code_service.rb": {
         "lines": [
-          1,
-          1,
-          4,
-          4,
-          4,
-          4,
-          null,
-          null
-        ]
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/forecast_service.rb": {
         "lines": [
-          1,
-          1,
-          4,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/forecast.rb": {
-        "lines": [
-          1,
-          1,
-          192,
-          12,
           0,
-          null,
-          12,
-          null,
-          null,
-          180,
-          164,
-          null,
-          16,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/application_record.rb": {
-        "lines": [
+          0,
+          0,
+          0,
           0,
           0,
           0
@@ -149,6 +164,6 @@
         }
       }
     },
-    "timestamp": 1604634821
+    "timestamp": 1604636531
   }
 }

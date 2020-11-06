@@ -10,6 +10,7 @@ SimpleCov.start 'rails' do
   add_filter 'channels'
   add_filter 'jobs'
   add_filter 'mailers'
+  add_filter 'application_record.rb'
 end
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file

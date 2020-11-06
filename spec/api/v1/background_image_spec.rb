@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Background image API has multiple attributes' do
   before(:each) do
-    location = 'denver,co'
-    get "/api/v1/backgrounds?location=#{location}"
+    @location = 'denver,co'
+    get "/api/v1/backgrounds?location=#{@location}"
 
     expect(response).to be_successful
     @json = JSON.parse(response.body)
@@ -11,52 +11,25 @@ RSpec.describe 'Background image API has multiple attributes' do
 
   it 'gets specific info, in specific format' do
     expect(@json.keys).to eq(['data'])
-    expected_credit_keys = %w[source author logo]
+    expect(@json['data'].keys).to eq(%w[id type attributes])
+    expect(@json['data']['id']).to be_nil
+    expect(@json['data']['type']).to eq('image')
 
-    extra_attributes_in_data = []
-    extra_attributes_in_credit = []
+    expect(@json['data']['attributes'].keys).to eq(['image'])
+    expect(@json['data']['attributes']['image'].keys).to eq(%w[location image_url credit])
+    expect(@json['data']['attributes']['image']['location']).to eq(@location)
+    expect(@json['data']['attributes']['image']['image_url']).to be_a(String)
 
+    expect(@json['data']['attributes']['image']['credit']).to be_a(Hash)
+    expect(@json['data']['attributes']['image']['credit'].keys).to eq(%w[source author portfolio image_links])
+    expect(@json['data']['attributes']['image']['credit']['source']).to eq('unsplash.com')
+    expect(@json['data']['attributes']['image']['credit']['author']).to be_a(String)
+    expect(@json['data']['attributes']['image']['credit']['portfolio']).to be_a(String)
+    expect(@json['data']['attributes']['image']['credit']['image_links']).to be_a(Hash)
 
-    @json['data'].each do |key, value|
-      if key == 'type'
-        expect(value).to eq('image')
-      elsif key == 'id'
-        expect(value).to eq(nil)
-
-      elsif key == 'attributes'
-        expect(value).to be_a(Hash)
-        expect(value.keys).to eq('image')
-
-        value.each do |k,v|
-
-          if k == 'location'
-            expect(v).to eq(location)
-
-          elsif k == 'image_url'
-            expect(v).to be_a(String)
-
-          elsif k == 'credit'
-            expect(v).to be_a(Hash)
-
-            expect(v.keys).to eq(expected_credit_keys)
-            v.values.each do |attr|
-              expect(attr).to be_a(String)
-            end
-
-            v.keys.each do |name|
-              if !expected_credit_keys.include?(name)
-                extra_attributes_in_credit << name
-              end
-            end
-          end
-        end
-      else
-        extra_attributes_in_data << value
-      end
+    expect(@json['data']['attributes']['image']['credit']['image_links'].keys).to eq(%w[raw full regular small thumb])
+    @json['data']['attributes']['image']['credit']['image_links'].values.each do |name|
+      expect(name).to be_a(String)
     end
-
-    expect(extra_attributes_in_data).to be_empty
-    expect(extra_attributes_in_credit).to be_empty
-
   end
 end

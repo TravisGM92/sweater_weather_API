@@ -3,11 +3,11 @@
 class UserSerializer
   include FastJsonapi::ObjectSerializer
 
-  attribute :email do |data|
+  attribute 'email' do |data|
     data[:email]
   end
 
-  attribute :api_key do |data|
+  attribute 'api_key' do |data|
     data[:api_key]
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'User registration API' do
@@ -7,11 +9,10 @@ RSpec.describe 'User registration API' do
   end
 
   it 'successful API call registers a new user' do
-
     body = {
-      "email": "whatever@example.com",
-      "password": "password",
-      "password_confirmation": "password"
+      "email": 'whatever@example.com',
+      "password": 'password',
+      "password_confirmation": 'password'
     }
 
     response = conn('/api/v1/users').post do |request|
@@ -21,28 +22,28 @@ RSpec.describe 'User registration API' do
     expect(response).to be_successful
 
     json = JSON.parse(response.body, symbolize_names: true)
-    require "pry"; binding.pry
+    require 'pry'; binding.pry
     expect(response.status).to eq(201)
     expect(json.keys).to eq(['data'])
     expect(json['data'].keys).to eq(%w[type id attributes])
     expect(json['data']['attributes'].keys).to eq(%w[email api_key])
-      json['data']['attributes'].values.each do |attr|
-        expect(attr).to be_a(String)
-      end
+    json['data']['attributes'].each_value do |attr|
+      expect(attr).to be_a(String)
+    end
   end
 
   xit 'unsuccesful API call returns some kind of 400 code and description for error' do
     user1 = create(:user)
-    require "pry"; binding.pry
+    require 'pry'; binding.pry
     body = {
-      "email": "whatever@example.com",
-      "password": "password",
-      "password_confirmation": "password"
+      "email": 'whatever@example.com',
+      "password": 'password',
+      "password_confirmation": 'password'
     }
 
     response = conn('/api/v1/users').post do |request|
       request.body = body
     end
-    require "pry"; binding.pry
+    require 'pry'; binding.pry
   end
 end

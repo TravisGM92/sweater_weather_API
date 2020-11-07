@@ -1,6 +1,53 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/forecast.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          417,
+          198,
+          219,
+          218,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          198,
+          35,
+          163,
+          37,
+          126,
+          63,
+          63,
+          63,
+          null,
+          null,
+          null,
+          1,
+          218,
+          51,
+          167,
+          42,
+          125,
+          62,
+          63,
+          31,
+          null,
+          32,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/user.rb": {
         "lines": [
           1,
@@ -11,212 +58,201 @@
           null
         ]
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/forecast.rb": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/backgrounds/search_controller.rb": {
         "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/image_serializer.rb": {
-        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/forecast_serializer.rb": {
-        "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/forecast_facade.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/image_facade.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null
+        ]
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/image_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          2,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/image_facade.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/image_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/forecast/search_controller.rb": {
         "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/backgrounds/search_controller.rb": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/forecast_serializer.rb": {
         "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          5,
+          5,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          48,
+          48,
+          null,
+          48,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/forecast_facade.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/geo_code_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/forecast_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/users/user_controller.rb": {
         "lines": [
@@ -242,55 +278,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/image_service.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/geo_code_service.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/forecast_service.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1604721604
+    "timestamp": 1604781167
   }
 }

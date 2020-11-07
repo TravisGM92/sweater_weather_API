@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Background image API has multiple attributes' do
@@ -28,7 +30,7 @@ RSpec.describe 'Background image API has multiple attributes' do
     expect(@json['data']['attributes']['image']['credit']['image_links']).to be_a(Hash)
 
     expect(@json['data']['attributes']['image']['credit']['image_links'].keys).to eq(%w[raw full regular small thumb])
-    @json['data']['attributes']['image']['credit']['image_links'].values.each do |name|
+    @json['data']['attributes']['image']['credit']['image_links'].each_value do |name|
       expect(name).to be_a(String)
     end
   end

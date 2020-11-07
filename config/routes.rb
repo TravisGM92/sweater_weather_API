@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       namespace :backgrounds do
         get '/', to: 'search#show'
       end
+      namespace :users do
+        post '/', to: 'user#create'
+      end
     end
   end
 end

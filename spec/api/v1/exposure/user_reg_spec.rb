@@ -30,9 +30,8 @@ RSpec.describe 'User registration API' do
     end
   end
 
-  xit 'unsuccesful API call returns some kind of 400 code and description for error' do
-    user1 = create(:user)
-    require 'pry'; binding.pry
+  it 'unsuccesful API call returns some kind of 400 code and description for error' do
+
     body = {
       "email": 'whatever@example.com',
       "password": 'password',
@@ -42,6 +41,8 @@ RSpec.describe 'User registration API' do
     response = conn('/api/v1/users').post do |request|
       request.body = body
     end
-    require 'pry'; binding.pry
+
+    expect(response.status).to eq(403)
+    expect(response.body).to eq("\"Credentials are bad\"")
   end
 end

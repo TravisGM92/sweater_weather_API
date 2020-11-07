@@ -73,11 +73,29 @@
           0,
           0,
           null,
+          null,
+          0,
+          0,
+          0,
+          null,
           0,
           null,
           0,
           0,
           0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/error_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
           0
         ],
         "branches": {
@@ -283,6 +301,12 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           null,
@@ -344,6 +368,6 @@
         }
       }
     },
-    "timestamp": 1604785431
+    "timestamp": 1604793377
   }
 }

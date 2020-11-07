@@ -5,6 +5,7 @@ module Api
     module Users
       class UserController < ApplicationController
         def create
+          require "pry"; binding.pry
           # render json: ForecastSerializer.new(ForecastFacade.get_weather(params[:location]))
         end
 

@@ -19,10 +19,8 @@ RSpec.describe 'User registration API' do
       request.body = body
     end
 
-    expect(response).to be_successful
-
     json = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
+
     expect(response.status).to eq(201)
     expect(json.keys).to eq(['data'])
     expect(json['data'].keys).to eq(%w[type id attributes])

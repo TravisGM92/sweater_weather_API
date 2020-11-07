@@ -21,11 +21,11 @@ RSpec.describe 'User registration API' do
 
     json = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response.status).to eq(201)
-    expect(json.keys).to eq(['data'])
-    expect(json['data'].keys).to eq(%w[type id attributes])
-    expect(json['data']['attributes'].keys).to eq(%w[email api_key])
-    json['data']['attributes'].each_value do |attr|
+    expect(response.status).to eq(200)
+    expect(json.keys).to eq([:data])
+    expect(json[:data].keys).to eq(%i[id type attributes])
+    expect(json[:data][:attributes].keys).to eq(%i[email api_key])
+    json[:data][:attributes].each_value do |attr|
       expect(attr).to be_a(String)
     end
   end

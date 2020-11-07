@@ -10,7 +10,7 @@ RSpec.describe 'User registration API' do
 
     body = {
       "email": "whatever@example.com",
-      "password": "password"
+      "password": "password",
       "password_confirmation": "password"
     }
 
@@ -32,10 +32,11 @@ RSpec.describe 'User registration API' do
   end
 
   xit 'unsuccesful API call returns some kind of 400 code and description for error' do
-
+    user1 = create(:user)
+    require "pry"; binding.pry
     body = {
       "email": "whatever@example.com",
-      "password": "password"
+      "password": "password",
       "password_confirmation": "password"
     }
 

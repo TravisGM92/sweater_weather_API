@@ -1,6 +1,16 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/forecast.rb": {
         "lines": [
           null,
@@ -217,8 +227,13 @@
           0,
           0,
           0,
+          null,
           0,
           null,
+          0,
+          null,
+          0,
+          0,
           0,
           0,
           0,
@@ -276,6 +291,6 @@
         }
       }
     },
-    "timestamp": 1604720552
+    "timestamp": 1604721604
   }
 }

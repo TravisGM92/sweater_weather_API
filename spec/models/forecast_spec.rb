@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Forecast, type: :model do
-  it ".get_direction()" do
-
+  it '.get_direction()' do
     expect(Forecast.get_direction(10)).to eq('North')
     expect(Forecast.get_direction(180)).to eq('South')
     expect(Forecast.get_direction(90)).to eq('East')
@@ -18,7 +19,7 @@ describe Forecast, type: :model do
       expect(result).to be_a(String)
       expect(result).to_not eq('This formula only accepts meterological degrees (any number between 1 and 360)')
     end
-    number = (361..10000).to_a.shuffle.pop
+    number = (361..10_000).to_a.shuffle.pop
     expect(Forecast.get_direction(number)).to eq('This formula only accepts meterological degrees (any number between 1 and 360)')
   end
 end

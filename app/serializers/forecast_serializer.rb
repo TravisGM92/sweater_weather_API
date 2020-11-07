@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastSerializer
   include FastJsonapi::ObjectSerializer
   set_id { nil }
@@ -20,11 +22,11 @@ class ForecastSerializer
   end
 
   attribute :daily_weather do |data|
-    self.daily(data[:daily][0..4])
+    daily(data[:daily][0..4])
   end
 
   attribute :hourly_weather do |data|
-    self.hash_hourly(data[:hourly])
+    hash_hourly(data[:hourly])
   end
 
   def self.daily(data)
@@ -49,7 +51,7 @@ class ForecastSerializer
       clock = Time.at(info[:dt])
       {
         'time': "#{clock.hour}:#{clock.min}:#{clock.sec}",
-        'wind_speed': "#{info[:wind_speed]}",
+        'wind_speed': (info[:wind_speed]).to_s,
         'wind_direction': Forecast.get_direction(info[:wind_deg]),
         'conditions': info[:weather][0][:description],
         'icon': info[:weather][0][:icon]

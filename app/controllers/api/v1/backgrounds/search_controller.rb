@@ -2,10 +2,10 @@
 
 module Api
   module V1
-    module Forecast
+    module Backgrounds
       class SearchController < ApplicationController
         def show
-          render json: ForecastSerializer.new(ForecastFacade.get_weather(params[:location]))
+          render json: ImageSerializer.new(ImageFacade.get_image(params[:location]))
         end
       end
     end

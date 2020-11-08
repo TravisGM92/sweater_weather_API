@@ -13,6 +13,10 @@ class User < ApplicationRecord
     User.where(email: data['email']).empty?
   end
 
+  def self.check_params(data)
+    data.keys.include?(%w[email password password_confirmation])
+  end
+
   private
 
   def set_api_key

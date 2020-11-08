@@ -8,11 +8,15 @@ module Api
           if !User.check_params(user_params)
             self.status = 400
             self.response_body = 'Required information missing or incorrect'.to_json
-            ErrorSerializer.new(user_params)
+            ErrorSerializer.new("error")
           elsif User.check_email(user_params)
             self.status = 403
             self.response_body = 'Credentials are bad'.to_json
             ErrorSerializer.new(user_params).to_json
+          elsif user_params.values.any?("") || user_params[:password] != user_params[:password_confirmation]
+            self.status = 422
+            self.response_body = 'Required information missing'
+            ErrorSerializer.new(user_params)
           else
             render json: UserSerializer.new(User.create!(user_params))
           end

@@ -18,4 +18,21 @@ describe User, type: :model do
       expect(user.api_key.length).to eq(24)
     end
   end
+
+  describe 'methods' do
+    it '.self.check_email()' do
+      user = User.create!(email: 'hello@email.com', password: 'yep')
+      data = {'email': 'hello@email.com'}
+
+      expect(User.check_email(data)).to eq(false)
+    end
+
+    it 'self.check_params()' do
+      data = {'email' => 'hello@email.com'}
+      data2 = {"email"=>"hello", "password"=>"yep", "password_confirmation"=>"yep"}
+
+      expect(User.check_params(data)).to eq(false)
+      expect(User.check_params(data2)).to eq(true)
+    end
+  end
 end

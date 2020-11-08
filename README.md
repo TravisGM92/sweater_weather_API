@@ -32,3 +32,17 @@ To demonstrate knowledge and skill in the ability to consume and expose an exter
 8. Once inside the project directory, run `bundle exec rspec` and you'll see several passing tests.
 9. To test out the API endpoints that I've built, you'll need to open your API testing program of choice, I use [Postman](https://www.postman.com/)
 10. Once you've got an API program downloaded and open, run the following command in your terminal: `rails s`. Then put a valid endpoint into your API program and send it off. You should see the terminal running through the program, and you should get some output. For ideas of what kinds of API endpoints to test, check out the spec folders inside the project.
+
+
+
+
+
+
+TO DO
+
+
+
+1. Have to refactor the serializers to utilize POROS. Already did daily and hourly weather. Need to do;
+-current_weather
+-Image
+-User

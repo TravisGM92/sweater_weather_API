@@ -10,11 +10,12 @@ class User < ApplicationRecord
 
 
   def self.check_email(data)
-    User.where(email: data['email']).empty?
+    !User.where(email: data['email']).empty?
   end
 
   def self.check_params(data)
-    data.keys.include?(%w[email password password_confirmation])
+    expected = %w[email password password_confirmation]
+    data.keys.include?('email') && data.keys.include?('password') && data.keys.include?('password_confirmation')
   end
 
   private

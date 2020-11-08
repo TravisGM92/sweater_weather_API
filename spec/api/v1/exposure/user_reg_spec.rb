@@ -85,8 +85,8 @@ RSpec.describe 'User registration API' do
       request.body = body
     end
 
-    expect(response.status).to eq(400)
-    expect(response.body).to eq("\"Required information missing or incorrect\"")
+    expect(response.status).to eq(422)
+    expect(response.body).to eq("Required information missing")
 
     body2 = {
       "email": 'dude@email.com',
@@ -98,8 +98,8 @@ RSpec.describe 'User registration API' do
       request.body = body2
     end
 
-    expect(response2.status).to eq(400)
-    expect(response2.body).to eq("\"Required information missing or incorrect\"")
+    expect(response2.status).to eq(422)
+    expect(response2.body).to eq("Required information missing")
   end
 
   it "when password and confirmation don't match, 403 code is sent" do
@@ -113,7 +113,7 @@ RSpec.describe 'User registration API' do
       req.body = body
     end
 
-    expect(response.status).to eq(400)
-    expect(response.body).to eq("\"Required information missing or incorrect\"")
+    expect(response.status).to eq(422)
+    expect(response.body).to eq("Required information missing")
   end
 end

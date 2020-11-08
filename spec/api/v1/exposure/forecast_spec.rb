@@ -26,7 +26,6 @@ RSpec.describe 'Forecast API has multiple attributes' do
     extra_attributes_in_daily_weather = []
     extra_attributes_in_hourly_weather = []
     extra_attributes_in_data = []
-
     forecast['data'].each do |key, value|
       case key
         # expect forecast['data'] to have 'id' as key, expect it to be nil

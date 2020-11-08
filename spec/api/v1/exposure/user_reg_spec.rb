@@ -46,7 +46,7 @@ RSpec.describe 'User registration API' do
     expect(response.body).to eq("\"Credentials are bad\"")
   end
 
-  it 'lack of email or psasword returns 400 code' do
+  it 'lack of email or password returns 400 code' do
 
     body = {
       "password": 'password',
@@ -58,6 +58,62 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response.status).to eq(400)
-    expect(response.body).to eq("\"Required information missing\"")
+    expect(response.body).to eq("\"Required information missing or incorrect\"")
+
+
+    body2 = {
+      "email": 'whatever@example.com',
+      "password_confirmation": 'password'
+    }
+
+    response2 = conn('/api/v1/users').post do |request|
+      request.body = body2
+    end
+
+    expect(response2.status).to eq(400)
+    expect(response2.body).to eq("\"Required information missing or incorrect\"")
+  end
+
+  it 'inclusion of email, password and confirmation but lack of value for any returns 400 code' do
+    body = {
+      "email": '',
+      'password': 'password',
+      "password_confirmation": 'password'
+    }
+
+    response = conn('/api/v1/users').post do |request|
+      request.body = body
+    end
+
+    expect(response.status).to eq(400)
+    expect(response.body).to eq("\"Required information missing or incorrect\"")
+
+    body2 = {
+      "email": 'dude@email.com',
+      'password': '',
+      "password_confirmation": 'password'
+    }
+
+    response2 = conn('/api/v1/users').post do |request|
+      request.body = body2
+    end
+
+    expect(response2.status).to eq(400)
+    expect(response2.body).to eq("\"Required information missing or incorrect\"")
+  end
+
+  it "when password and confirmation don't match, 403 code is sent" do
+    body = {
+      'email': 'dude@email.com',
+      'password': 'password',
+      'password_confirmation': 'nope'
+    }
+
+    response = conn('/api/v1/users').post do |req|
+      req.body = body
+    end
+
+    expect(response.status).to eq(400)
+    expect(response.body).to eq("\"Required information missing or incorrect\"")
   end
 end

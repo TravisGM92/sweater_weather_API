@@ -7,7 +7,7 @@ module Api
         def create
           if !User.check_params(user_params)
             self.status = 400
-            self.response_body = 'Required information missing'.to_json
+            self.response_body = 'Required information missing or incorrect'.to_json
             ErrorSerializer.new(user_params)
           elsif User.check_email(user_params)
             self.status = 403

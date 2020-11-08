@@ -29,7 +29,7 @@ To demonstrate knowledge and skill in the ability to consume and expose an exter
 3. Fork and Clone this repo
 4. Install gem packages: `bundle install`
 5. Setup the database: `rails db:create`
-6. You will need to sign up for an API key through [Open Weather API](https://openweathermap.org/), [Map Quest API](https://developer.mapquest.com/) and [Upsplash API](https://unsplash.com/developers)
+6. You will need to sign up for an API key through [Open Weather API](https://openweathermap.org/), [Map Quest API](https://developer.mapquest.com/) and [Upsplash API](https://unsplash.com/developers). You'll need to save them in the project directory in a folder that will not be uploaded to GitHub (if you decide to work on the repo and push up to your own profile).
 7. From the command line, run `bundle exec figaro install`. By running this command, rails will create an application.yml file under your config folder. Open up that file, and paste your API key in by following this format: MOVIE_API_KEY: 'your api key here'
 8. Once inside the project directory, run `bundle exec rspec` and you'll see several passing tests.
 9. To test out the API endpoints that I've built, you'll need to open your API testing program of choice, I use [Postman](https://www.postman.com/)

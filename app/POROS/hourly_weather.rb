@@ -5,9 +5,11 @@ class HourlyWeather
               :wind_speed,
               :wind_direction,
               :conditions,
-              :icon
+              :icon,
+              :temperature
 
   def initialize(data)
+    @temperature = data[:temp]
     @time = Time.at(data[:dt])
     @wind_speed = data[:wind_speed].to_s
     @wind_direction = Forecast.get_direction(data[:wind_deg])

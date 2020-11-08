@@ -56,7 +56,8 @@ class ForecastSerializer
         'wind_speed': hour.wind_speed,
         'wind_direction': hour.wind_direction,
         'conditions': hour.conditions,
-        'icon': hour.icon
+        'icon': hour.icon,
+        'temperature': hour.temperature
       }
     end
   end

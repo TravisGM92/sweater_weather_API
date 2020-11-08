@@ -11,11 +11,13 @@ To demonstrate knowledge and skill in the ability to consume and expose an exter
 3. Expose an API for CRUD functionality
 4. Determine completion criteria based on the needs of other developers
 5. Research, select, and consume an API based on your needs as a developer
+6. Research and choose appropriate HTTP codes for both happy and sad paths of an API call
 
 ## Design decisions
 
 1. First and foremost, since this app is meant to act as an API consumption and exposure program, there is no need for any views. So you'll find that the project has no `app/views` folder.
 2. Secondly, you'll see the API calls are broken up into three separate files; controllers, facades, then services.
+3. Serializers had to be built (and were made with the help of gem FastJsonApi) in order to ensure response of the correct format were given
 
 
 ## Local Setup

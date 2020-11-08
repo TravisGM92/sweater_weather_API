@@ -2,7 +2,7 @@
 
 ## Purpose
 
-To demonstrate knowledge and skill in the ability to consume and expose an external API (or several), and to build an API using that information.
+To demonstrate knowledge and skill in the ability to consume and build API's.
 
 ## Learning Goals
 

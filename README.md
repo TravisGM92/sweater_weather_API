@@ -23,14 +23,14 @@ To demonstrate knowledge and skill in the ability to consume and build API's.
 ## Local Setup
 
 1. Make sure you have the correct Ruby version installed (2.5.3). To check your Ruby version, from your command line, run `ruby -v`
-  - If you do not have the correct version, follow the instructions to install 2.5.3: from the command line, run `rbenv install 2.5.3`
+  - If you do not have the correct version, follow the instructions to install 2.5.3: from the command line, run `rbenv install 2.5.3`<br>
 2. Make sure you have the correct Rails version installed (5.2.4.3). To check your Rails version, from your command line, run `rails -v`
-  - If you do not have the correct Rails version, [follow these instructions to install 2.5.4.3](https://github.com/turingschool-examples/task_manager_rails/blob/master/rails_uninstall.md)
-3. Fork and Clone this repo
-4. Install gem packages: `bundle install`
-5. Setup the database: `rails db:create`
-6. You will need to sign up for an API key through [Open Weather API](https://openweathermap.org/), [Map Quest API](https://developer.mapquest.com/) and [Upsplash API](https://unsplash.com/developers). You'll need to save them in the project directory in a folder that will not be uploaded to GitHub (if you decide to work on the repo and push up to your own profile).
-7. From the command line, run `bundle exec figaro install`. By running this command, rails will create an application.yml file under your config folder. Open up that file, and paste your API key in by following this format: MOVIE_API_KEY: 'your api key here'
-8. Once inside the project directory, run `bundle exec rspec` and you'll see several passing tests.
-9. To test out the API endpoints that I've built, you'll need to open your API testing program of choice, I use [Postman](https://www.postman.com/)
-10. Once you've got an API program downloaded and open, run the following command in your terminal: `rails s`. Then put a valid endpoint into your API program and send it off. You should see the terminal running through the program, and you should get some output. For ideas of what kinds of API endpoints to test, check out the spec folders inside the project.
+  - If you do not have the correct Rails version, [follow these instructions to install 2.5.4.3](https://github.com/turingschool-examples/task_manager_rails/blob/master/rails_uninstall.md)<br>
+3. Fork and Clone this repo<br>
+4. Install gem packages: `bundle install`<br>
+5. Setup the database: `rails db:create`<br>
+6. You will need to sign up for an API key through [Open Weather API](https://openweathermap.org/), [Map Quest API](https://developer.mapquest.com/) and [Upsplash API](https://unsplash.com/developers).<br>
+7. From the command line, run `bundle exec figaro install`. By running this command, rails will create an application.yml file under your config folder. Open up that file, and paste your API key in by following this format: MOVIE_API_KEY: 'your api key here'<br>
+8. Once inside the project directory, run `bundle exec rspec` and you'll see several passing tests.<br>
+9. To test out the API endpoints that I've built, you'll need to open your API testing program of choice, I use [Postman](https://www.postman.com/)<br>
+10. Once you've got an API program downloaded and open, run the following command in your terminal: `rails s`. Then put a valid endpoint into your API program and send it off. You should see the terminal running through the program, and you should get some output. For ideas of what kinds of API endpoints to test, check out the spec folders inside the project.<br>

@@ -5,7 +5,7 @@ require 'rails_helper'
 describe HourlyWeather, type: :model do
   it 'Creates a hourly_weather object with specific attributes' do
     data = {
-      dt: 1595242800,
+      dt: 1_595_242_800,
       wind_speed: 22,
       wind_deg: 22,
       weather: [description: 'Good stuff', icon: 'Here it is']

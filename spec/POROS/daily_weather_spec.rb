@@ -5,10 +5,10 @@ require 'rails_helper'
 describe DailyWeather, type: :model do
   it 'Creates a daily_weather object with specific attributes' do
     data = {
-      dt: 1595242800,
-      sunrise: 1595242800,
-      sunset: 1595242800,
-      temp: {max: 32.4, min: 12.4},
+      dt: 1_595_242_800,
+      sunrise: 1_595_242_800,
+      sunset: 1_595_242_800,
+      temp: { max: 32.4, min: 12.4 },
       weather: [description: 'Good stuff', icon: 'Here it is']
     }
     weather = DailyWeather.new(data)

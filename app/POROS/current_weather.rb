@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CurrentWeather
   attr_reader :datetime,
               :sunrise,

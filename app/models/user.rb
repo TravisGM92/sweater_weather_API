@@ -8,7 +8,6 @@ class User < ApplicationRecord
   before_validation :set_api_key
   has_secure_password
 
-
   def self.check_email(data)
     !User.where(email: data['email']).empty?
   end

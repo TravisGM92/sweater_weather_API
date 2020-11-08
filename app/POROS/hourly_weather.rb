@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HourlyWeather
   attr_reader :time,
               :wind_speed,

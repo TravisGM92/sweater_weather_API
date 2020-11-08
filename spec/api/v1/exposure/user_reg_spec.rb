@@ -31,7 +31,6 @@ RSpec.describe 'User registration API' do
   end
 
   it 'duplicate email address API call returns 403 code and description for error' do
-
     body = {
       "email": 'whatever@example.com',
       "password": 'password',
@@ -43,11 +42,10 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response.status).to eq(403)
-    expect(response.body).to eq("\"Credentials are bad\"")
+    expect(response.body).to eq('"Credentials are bad"')
   end
 
   it 'lack of email or password returns 400 code' do
-
     body = {
       "password": 'password',
       "password_confirmation": 'password'
@@ -58,8 +56,7 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response.status).to eq(400)
-    expect(response.body).to eq("\"Required information missing or incorrect\"")
-
+    expect(response.body).to eq('"Required information missing or incorrect"')
 
     body2 = {
       "email": 'whatever@example.com',
@@ -71,7 +68,7 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response2.status).to eq(400)
-    expect(response2.body).to eq("\"Required information missing or incorrect\"")
+    expect(response2.body).to eq('"Required information missing or incorrect"')
   end
 
   it 'inclusion of email, password and confirmation but lack of value for any returns 400 code' do
@@ -86,7 +83,7 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response.status).to eq(422)
-    expect(response.body).to eq("Required information missing")
+    expect(response.body).to eq('Required information missing')
 
     body2 = {
       "email": 'dude@email.com',
@@ -99,7 +96,7 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response2.status).to eq(422)
-    expect(response2.body).to eq("Required information missing")
+    expect(response2.body).to eq('Required information missing')
   end
 
   it "when password and confirmation don't match, 403 code is sent" do
@@ -114,6 +111,6 @@ RSpec.describe 'User registration API' do
     end
 
     expect(response.status).to eq(422)
-    expect(response.body).to eq("Required information missing")
+    expect(response.body).to eq('Required information missing')
   end
 end

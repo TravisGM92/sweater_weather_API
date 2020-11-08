@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DailyWeather
   attr_reader :datetime,
               :sunrise,

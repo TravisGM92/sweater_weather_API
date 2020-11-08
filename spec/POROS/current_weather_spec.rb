@@ -5,9 +5,9 @@ require 'rails_helper'
 describe CurrentWeather, type: :model do
   it 'Creates a current_weather object with specific attributes' do
     data = {
-      dt: 1595242800,
-      sunrise: 1595242800,
-      sunset: 1595242800,
+      dt: 1_595_242_800,
+      sunrise: 1_595_242_800,
+      sunset: 1_595_242_800,
       temp: 23.4,
       feels_like: 23,
       humidity: 110,
@@ -23,7 +23,7 @@ describe CurrentWeather, type: :model do
     expect(weather.sunset).to be_a(Time)
     expect(weather.temperature).to be_a(Float)
     expect(weather.feels_like).to be_an(Integer)
-    expect(weather.humidity). to be_an(Integer)
+    expect(weather.humidity).to be_an(Integer)
     expect(weather.uvi).to be_an(Integer)
     expect(weather.visibility).to be_an(Integer)
     expect(weather.conditions).to be_a(String)

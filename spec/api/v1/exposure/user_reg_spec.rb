@@ -30,7 +30,7 @@ RSpec.describe 'User registration API' do
     end
   end
 
-  it 'unsuccesful API call returns some kind of 400 code and description for error' do
+  it 'duplicate email address API call returns 403 code and description for error' do
 
     body = {
       "email": 'whatever@example.com',
@@ -44,5 +44,20 @@ RSpec.describe 'User registration API' do
 
     expect(response.status).to eq(403)
     expect(response.body).to eq("\"Credentials are bad\"")
+  end
+
+  it 'lack of email or psasword returns 400 code' do
+
+    body = {
+      "password": 'password',
+      "password_confirmation": 'password'
+    }
+
+    response = conn('/api/v1/users').post do |request|
+      request.body = body
+    end
+
+    expect(response.status).to eq(400)
+    expect(response.body).to eq("\"Required information missing\"")
   end
 end

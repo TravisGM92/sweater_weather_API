@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-11-07T16:56:17-07:00">2020-11-07T16:56:17-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-11-07T18:07:11-07:00">2020-11-07T18:07:11-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,9 +43,9 @@
   </div>
 
   <div class="t-line-summary">
-    <b>222</b> relevant lines,
+    <b>229</b> relevant lines,
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>222</b> lines missed. </span>
+    <span class="red"><b>229</b> lines missed. </span>
     (<span class="red">
   0.0%
 </span>
@@ -95,10 +95,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ca5c481d25066196ccd923df17071f8be45b3c27" class="src_link" title="app/controllers/api/v1/users/user_controller.rb">app/controllers/api/v1/users/user_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
+            <td class="cell--number">29</td>
             <td class="cell--number">25</td>
-            <td class="cell--number">21</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">21</td>
+            <td class="cell--number">25</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -161,10 +161,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#aec92a6064ed998abc5c6989f165ea9e77d1765a" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -278,9 +278,9 @@
   </div>
 
   <div class="t-line-summary">
-    <b>45</b> relevant lines,
+    <b>49</b> relevant lines,
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>45</b> lines missed. </span>
+    <span class="red"><b>49</b> lines missed. </span>
     (<span class="red">
   0.0%
 </span>
@@ -330,10 +330,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ca5c481d25066196ccd923df17071f8be45b3c27" class="src_link" title="app/controllers/api/v1/users/user_controller.rb">app/controllers/api/v1/users/user_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
+            <td class="cell--number">29</td>
             <td class="cell--number">25</td>
-            <td class="cell--number">21</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">21</td>
+            <td class="cell--number">25</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -438,9 +438,9 @@
   </div>
 
   <div class="t-line-summary">
-    <b>57</b> relevant lines,
+    <b>60</b> relevant lines,
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>57</b> lines missed. </span>
+    <span class="red"><b>60</b> lines missed. </span>
     (<span class="red">
   0.0%
 </span>
@@ -490,10 +490,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#aec92a6064ed998abc5c6989f165ea9e77d1765a" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0.00</td>
             
           </tr>
@@ -1265,9 +1265,9 @@
     
 
     <div class="t-line-summary">
-      <b>21</b> relevant lines.
+      <b>25</b> relevant lines.
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>21</b> lines missed.</span>
+      <span class="red"><b>25</b> lines missed.</span>
     </div>
 
     
@@ -1361,7 +1361,7 @@
 
             
 
-            <code class="ruby">          if User.check_email(user_params)</code>
+            <code class="ruby">          if !User.check_params(user_params)</code>
           </li>
         </div>
       
@@ -1372,7 +1372,7 @@
 
             
 
-            <code class="ruby">            render json: UserSerializer.new(User.create!(user_params))</code>
+            <code class="ruby">            self.status = 400</code>
           </li>
         </div>
       
@@ -1383,7 +1383,7 @@
 
             
 
-            <code class="ruby">          else</code>
+            <code class="ruby">            self.response_body = &#39;Required information missing&#39;.to_json</code>
           </li>
         </div>
       
@@ -1394,7 +1394,7 @@
 
             
 
-            <code class="ruby">            self.status = 403</code>
+            <code class="ruby">            ErrorSerializer.new(user_params)</code>
           </li>
         </div>
       
@@ -1405,7 +1405,7 @@
 
             
 
-            <code class="ruby">            self.response_body = &#39;Credentials are bad&#39;.to_json</code>
+            <code class="ruby">          elsif User.check_email(user_params)</code>
           </li>
         </div>
       
@@ -1416,7 +1416,7 @@
 
             
 
-            <code class="ruby">            ErrorSerializer.new(user_params).to_json</code>
+            <code class="ruby">            self.status = 403</code>
           </li>
         </div>
       
@@ -1427,7 +1427,7 @@
 
             
 
-            <code class="ruby">          end</code>
+            <code class="ruby">            self.response_body = &#39;Credentials are bad&#39;.to_json</code>
           </li>
         </div>
       
@@ -1438,18 +1438,18 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">            ErrorSerializer.new(user_params).to_json</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="missed" data-hits="0" data-linenumber="16">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">          else</code>
           </li>
         </div>
       
@@ -1460,18 +1460,18 @@
 
             
 
-            <code class="ruby">        private</code>
+            <code class="ruby">            render json: UserSerializer.new(User.create!(user_params))</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="missed" data-hits="0" data-linenumber="18">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">          end</code>
           </li>
         </div>
       
@@ -1482,18 +1482,18 @@
 
             
 
-            <code class="ruby">        def user_params</code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
             
 
-            <code class="ruby">          params.permit(:email, :password, :password_confirmation)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1504,18 +1504,18 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">        private</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="22">
             
             
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1526,7 +1526,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        def user_params</code>
           </li>
         </div>
       
@@ -1537,12 +1537,56 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">          params.permit(:email, :password, :password_confirmation)</code>
           </li>
         </div>
       
         <div>
           <li class="missed" data-hits="0" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="29">
             
             
 
@@ -2463,9 +2507,9 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
+      <b>17</b> relevant lines.
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <span class="red"><b>17</b> lines missed.</span>
     </div>
 
     
@@ -2647,18 +2691,18 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def self.check_params(data)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="missed" data-hits="0" data-linenumber="17">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    data.keys.include?(%w[email password password_confirmation])</code>
           </li>
         </div>
       
@@ -2669,18 +2713,18 @@
 
             
 
-            <code class="ruby">  def set_api_key</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby">    self.api_key = ApiKey.generator</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2691,12 +2735,56 @@
 
             
 
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">  def set_api_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">    self.api_key = ApiKey.generator</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="24">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="21">
+          <li class="missed" data-hits="0" data-linenumber="25">
             
             
 

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       namespace :users do
         post '/', to: 'user#create'
       end
+      namespace :trails do
+        get '/', to: 'search#show'
+      end
     end
   end
 end

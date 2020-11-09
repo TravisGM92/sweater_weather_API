@@ -1,5 +1,8 @@
+require 'rails_helper'
+
 RSpec.describe 'Forecast API has multiple attributes' do
   it 'gets specific info, in specific format' do
+
     get '/api/v1/trails?location=denver,co'
 
     expect(response).to be_successful

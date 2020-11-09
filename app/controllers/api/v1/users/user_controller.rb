@@ -13,6 +13,10 @@ module Api
             self.status = 403
             self.response_body = 'Credentials are bad'.to_json
             ErrorSerializer.new(user_params).to_json
+          elsif user_params.values.any?('') || user_params[:password] != user_params[:password_confirmation]
+            self.status = 422
+            self.response_body = 'Required information missing'
+            ErrorSerializer.new(user_params)
           else
             render json: UserSerializer.new(User.create!(user_params))
           end

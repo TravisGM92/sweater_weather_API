@@ -14,7 +14,7 @@ RSpec.describe 'Forecast API has multiple attributes' do
 
     expected_current_weather_keys = %w[datetime sunrise sunset temperature feels_like humidity visibility uvi conditions icon]
     expected_daily_weather_keys = %w[date sunrise sunset max_temp min_temp conditions icon]
-    expected_hourly_weather_keys = %w[time wind_speed wind_direction conditions icon]
+    expected_hourly_weather_keys = %w[time wind_speed wind_direction conditions icon temperature]
 
     # expect forecast['data']['attributes']['current_weather'] to have specific keys
     expected_current_weather_keys.each do |attr|

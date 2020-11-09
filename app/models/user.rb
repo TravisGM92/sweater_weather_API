@@ -17,6 +17,10 @@ class User < ApplicationRecord
     data.keys.include?('email') && data.keys.include?('password') && data.keys.include?('password_confirmation')
   end
 
+  def self.check_key(key)
+    !User.where(api_key: key).empty?
+  end
+
   private
 
   def set_api_key

@@ -9,8 +9,9 @@ RSpec.describe 'User registration API' do
   end
 
   it 'successful API call registers a new user' do
+
     body = {
-      "email": 'whatever@example.com',
+      "email": 'whatever2@example.com',
       "password": 'password',
       "password_confirmation": 'password'
     }
@@ -18,7 +19,6 @@ RSpec.describe 'User registration API' do
     response = conn('/api/v1/users').post do |request|
       request.body = body
     end
-
     json = JSON.parse(response.body)
 
     expect(response.status).to eq(200)
@@ -28,6 +28,8 @@ RSpec.describe 'User registration API' do
     json['data']['attributes'].each_value do |attr|
       expect(attr).to be_a(String)
     end
+
+    delete_response = conn('/api/v1/users').delete
   end
 
   it 'duplicate email address API call returns 403 code and description for error' do
@@ -37,12 +39,17 @@ RSpec.describe 'User registration API' do
       "password_confirmation": 'password'
     }
 
+    conn('/api/v1/users').post do |request|
+      request.body = body
+    end
+
     response = conn('/api/v1/users').post do |request|
       request.body = body
     end
 
     expect(response.status).to eq(403)
     expect(response.body).to eq('"Credentials are bad"')
+    delete_response = conn('/api/v1/users').delete
   end
 
   it 'lack of email or password returns 400 code' do

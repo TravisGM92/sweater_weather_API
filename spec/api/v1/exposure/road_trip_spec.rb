@@ -9,12 +9,22 @@ RSpec.describe 'Road trip API' do
   end
 
   it 'successful API call returns JSON object with specific attributes' do
-    user = User.create!(email: 'dude@mail.com', password: 'yep')
+    # body1 = {
+    #   "email": 'whatever@example.com',
+    #   "password": 'password',
+    #   "password_confirmation": 'password'
+    # }
+    #
+    # response = conn('/api/v1/users').post do |request|
+    #   request.body = body1
+    # end
+    
+  # if database is reset, have to create a new user by uncommenting above lines
 
     body = {
       "origin": 'Denver, CO',
       "destination": 'Estes Park, CO',
-      "api_key": "#{user.api_key}"
+      "api_key": "EFi8FSk6Efm2azGclIHrLAtt"
     }
 
     response = conn('/api/v1/road_trip').post do |request|

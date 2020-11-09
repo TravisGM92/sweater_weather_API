@@ -22,6 +22,10 @@ module Api
           end
         end
 
+        def destroy
+          User.last.delete
+        end
+
         private
 
         def user_params

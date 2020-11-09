@@ -7,7 +7,7 @@ RSpec.describe 'Forecast API has multiple attributes' do
 
     expect(response).to be_successful
     trail = JSON.parse(response.body)
-
+    
     expect(trail['data'].keys).to eq(%w[id type attributes])
     expect(trail['data']['id']).to be_nil
     expect(trail['data']['type']).to eq('trail')

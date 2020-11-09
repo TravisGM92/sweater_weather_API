@@ -6,5 +6,17 @@ class TrailFacade
     weather = ForecastService.get_weather(coords)
     current_weather = CurrentWeather.new(weather[:current])
     trails = TrailService.get_trails(coords)
+    format_info(current_weather, trails, info)
+  end
+
+  def self.format_info(weather, trails, start)
+    array = []
+    trails[:trails].each do |info|
+      array << CreateTrail.new(info, start)
+    end
+    {
+      'weather': weather,
+      'trails': array
+    }
   end
 end

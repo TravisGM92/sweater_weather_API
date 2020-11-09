@@ -9,12 +9,12 @@ RSpec.describe 'Road trip API' do
   end
 
   it 'successful API call returns JSON object with specific attributes' do
-    create(:user)
-    require "pry"; binding.pry
+    user = User.create!(email: 'dude@mail.com', password: 'yep')
+
     body = {
-      "origin": 'whatever@example.com',
-      "destination": 'password',
-      "api_key": 'password'
+      "origin": 'Denver, CO',
+      "destination": 'Estes Park, CO',
+      "api_key": "#{user.api_key}"
     }
 
     response = conn('/api/v1/road_trip').post do |request|

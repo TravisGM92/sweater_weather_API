@@ -8,7 +8,7 @@ RSpec.describe 'Road trip API' do
     Faraday.new(url)
   end
 
-  it 'successful API call returns JSON object with specific attributes' do
+  xit 'successful API call returns JSON object with specific attributes' do
     user = User.create!(email: 'dude@mail.com', password: 'yep')
 
     body = {
@@ -38,18 +38,20 @@ RSpec.describe 'Road trip API' do
   end
 
   it 'lack of API key returns 401 code' do
+    # user = User.create!(email: 'dude@mail.com', password: 'yep')
+    #
     # body = {
-    #   "password": 'password',
-    #   "password_confirmation": 'password'
+    #   "origin": 'Denver, CO',
+    #   "destination": 'Estes Park, CO'
     # }
     #
-    # response = conn('/api/v1/users').post do |request|
+    # response = conn('/api/v1/road_trip').post do |request|
     #   request.body = body
     # end
     #
-    # expect(response.status).to eq(400)
+    # expect(response.status).to eq(401)
     # expect(response.body).to eq('"Required information missing or incorrect"')
-    #
+
     # body2 = {
     #   "email": 'whatever@example.com',
     #   "password_confirmation": 'password'

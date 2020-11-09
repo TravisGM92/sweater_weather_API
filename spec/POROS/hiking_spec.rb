@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe CreateHike do
-  it 'Creates a CreateHike object with specific attributes' do
+  xit 'Creates a CreateHike object with specific attributes' do
     data = {
     "trails": [
         {

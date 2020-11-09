@@ -8,7 +8,7 @@ RSpec.describe 'User registration API' do
     Faraday.new(url)
   end
 
-  it 'successful API call registers a new user' do
+  xit 'successful API call registers a new user' do
     body = {
       "email": 'whatever@example.com',
       "password": 'password',
@@ -30,7 +30,7 @@ RSpec.describe 'User registration API' do
     end
   end
 
-  it 'duplicate email address API call returns 403 code and description for error' do
+  xit 'duplicate email address API call returns 403 code and description for error' do
     body = {
       "email": 'whatever@example.com',
       "password": 'password',
@@ -45,7 +45,7 @@ RSpec.describe 'User registration API' do
     expect(response.body).to eq('"Credentials are bad"')
   end
 
-  it 'lack of email or password returns 400 code' do
+  xit 'lack of email or password returns 400 code' do
     body = {
       "password": 'password',
       "password_confirmation": 'password'
@@ -71,7 +71,7 @@ RSpec.describe 'User registration API' do
     expect(response2.body).to eq('"Required information missing or incorrect"')
   end
 
-  it 'inclusion of email, password and confirmation but lack of value for any returns 400 code' do
+  xit 'inclusion of email, password and confirmation but lack of value for any returns 400 code' do
     body = {
       "email": '',
       'password': 'password',
@@ -99,7 +99,7 @@ RSpec.describe 'User registration API' do
     expect(response2.body).to eq('Required information missing')
   end
 
-  it "when password and confirmation don't match, 403 code is sent" do
+  xit "when password and confirmation don't match, 403 code is sent" do
     body = {
       'email': 'dude@email.com',
       'password': 'password',

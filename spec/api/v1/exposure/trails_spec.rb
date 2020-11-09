@@ -33,4 +33,12 @@ RSpec.describe 'Forecast API has multiple attributes' do
       end
     end
   end
+
+  it 'non-existant location sends back 400 error' do
+    get '/api/v1/trails?location=332;p'
+
+
+    expect(response.status).to eq(400)
+    expect(response.body).to eq('Location not found')
+  end
 end

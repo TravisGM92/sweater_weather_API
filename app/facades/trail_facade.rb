@@ -11,12 +11,16 @@ class TrailFacade
 
   def self.format_info(weather, trails, start)
     array = []
-    trails[:trails].each do |info|
-      array << CreateTrail.new(info, start)
+    if trails[:trails] == []
+      'location not found'
+    else
+      trails[:trails].each do |info|
+        array << CreateTrail.new(info, start)
+      end
+      {
+        'weather': weather,
+        'trails': array
+      }
     end
-    {
-      'weather': weather,
-      'trails': array
-    }
   end
 end

@@ -3,9 +3,11 @@ class CreateTrail
               :summary,
               :difficulty,
               :location,
-              :distance_to_trail
+              :distance_to_trail,
+              :start
 
   def initialize(data, start)
+    @start = start
     @name = data[:name]
     @summary = data[:summary]
     @difficulty = data[:difficulty]

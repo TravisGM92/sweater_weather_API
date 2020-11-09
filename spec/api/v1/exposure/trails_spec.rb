@@ -6,25 +6,31 @@ RSpec.describe 'Forecast API has multiple attributes' do
     get '/api/v1/trails?location=denver,co'
 
     expect(response).to be_successful
-    trail = JSON.parse(response.body)
-    
-    expect(trail['data'].keys).to eq(%w[id type attributes])
-    expect(trail['data']['id']).to be_nil
-    expect(trail['data']['type']).to eq('trail')
-    expect(trail['data']['attributes']).to be_a(Hash)
+    trails = JSON.parse(response.body)
 
-    expect(trail['data']['attributes'].keys).to eq(%w[location forecast trails])
-    expect(trail['data']['attributes']['location']).to be_a(String)
-    expect(trail['data']['attributes']['forecast']).to be_a(Hash)
 
-    expect(trail['data']['attributes']['forecast'].keys).to eq(%w[summary temperature])
-    trail['data']['attributes']['forecast'].values.each do |name|
+    expect(trails['data'].keys).to eq(%w[id type attributes])
+    expect(trails['data']['id']).to be_nil
+    expect(trails['data']['type']).to eq('trail')
+    expect(trails['data']['attributes']).to be_a(Hash)
+
+    expect(trails['data']['attributes'].keys).to eq(%w[location forecast trails])
+    expect(trails['data']['attributes']['location']).to be_a(String)
+    expect(trails['data']['attributes']['forecast']).to be_a(Hash)
+
+    expect(trails['data']['attributes']['forecast'].keys).to eq(%w[summary temperature])
+    trails['data']['attributes']['forecast'].values.each do |name|
       expect(name).to be_a(String)
     end
 
-    expect(trail['data']['attributes']['trails'].keys).to eq(%w[name summary difficulty location distance_to_trail])
-    trail['data']['attributes']['trails'].values.each do |name|
-      expect(name).to be_a(String)
+    expect(trails['data']['attributes']['trails']).to be_an(Array)
+    expect(trails['data']['attributes']['trails'].length).to eq(10)
+
+    trails['data']['attributes']['trails'].each do |trail|
+      expect(trail.keys).to eq(%w[name summary difficulty location distance_to_trail])
+      trail.values.each do |name|
+        expect(name).to be_a(String)
+      end
     end
   end
 end

@@ -5,7 +5,7 @@ module Api
     module Trails
       class SearchController < ApplicationController
         def show
-          render TrailSerializer.new(TrailFacade.get_trail_info(params[:location])).to_json
+          render json: TrailSerializer.new(TrailFacade.get_trail_info(params[:location]))
         end
       end
     end

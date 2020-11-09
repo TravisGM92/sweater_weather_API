@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe HourlyWeather, type: :model do
+describe HourlyWeather do
   it 'Creates a hourly_weather object with specific attributes' do
     data = {
       dt: 1_595_242_800,

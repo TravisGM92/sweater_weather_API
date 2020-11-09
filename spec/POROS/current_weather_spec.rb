@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe CurrentWeather, type: :model do
+describe CurrentWeather do
   it 'Creates a current_weather object with specific attributes' do
     data = {
       dt: 1_595_242_800,

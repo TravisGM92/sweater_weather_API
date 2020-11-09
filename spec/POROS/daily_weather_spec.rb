@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe DailyWeather, type: :model do
+describe DailyWeather do
   it 'Creates a daily_weather object with specific attributes' do
     data = {
       dt: 1_595_242_800,

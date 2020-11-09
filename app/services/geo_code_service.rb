@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
 class GeoCodeService
+  def self.conn
+    Faraday.new('https://www.mapquestapi.com')
+  end
+
   def self.get_coordinates(info)
-    conn = Faraday.new(url: 'https://www.mapquestapi.com')
-    response = conn.get("/geocoding/v1/address?key=#{ENV['MAP_KEY']}&inFormat=kvp&outFormat=json&location=#{info}&thumbMaps=false")
+    response = conn.get('geocoding/v1/address') do |req|
+      req.params[:key] = ENV['MAP_KEY']
+      req.params[:location] = info
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 end

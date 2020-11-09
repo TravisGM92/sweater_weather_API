@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
 class ImageService
+  def self.conn
+    Faraday.new('https://api.unsplash.com')
+  end
+
   def self.get_image(info)
-    conn = Faraday.new(url: 'https://api.unsplash.com')
-    response = conn.get("/search/photos?page=1&query=#{info}&client_id=#{ENV['IMAGE_KEY']}")
+    response = conn.get('search/photos') do |req|
+      req.params[:page] = 1
+      req.params[:query] = info
+      req.params[:client_id] = ENV['IMAGE_KEY']
+    end
     { query: info,
       results: JSON.parse(response.body, symbolize_names: true) }
+    end
   end
-end

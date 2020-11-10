@@ -50,27 +50,16 @@ RSpec.describe 'RoadTrip API' do
   end
 
   it 'lack of API key returns 401 code' do
-    # body = {
-    #   "password": 'password',
-    #   "password_confirmation": 'password'
-    # }
-    #
-    # response = conn('/api/v1/users').post do |request|
-    #   request.body = body
-    # end
-    #
-    # expect(response.status).to eq(400)
-    # expect(response.body).to eq('"Required information missing or incorrect"')
-    #
-    # body2 = {
-    #   "email": 'whatever@example.com',
-    #   "password_confirmation": 'password'
-    # }
-    #
-    # response2 = conn('/api/v1/users').post do |request|
-    #   request.body = body2
-    # end
-    #
-    # expect(response2.status).to eq(400)
+    body = {
+      "password": 'password',
+      "password_confirmation": 'password'
+    }
+
+    response = conn('/api/v1/users').post do |request|
+      request.body = body
+    end
+
+    expect(response.status).to eq(400)
+    expect(response.body).to eq('"Required information missing or incorrect"')
   end
 end

@@ -13,7 +13,6 @@ class User < ApplicationRecord
   end
 
   def self.check_params(data)
-    expected = %w[email password password_confirmation]
     data.keys.include?('email') && data.keys.include?('password') && data.keys.include?('password_confirmation')
   end
 

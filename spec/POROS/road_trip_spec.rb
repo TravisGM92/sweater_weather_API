@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe RoadTrip do
@@ -6,10 +8,10 @@ describe RoadTrip do
       start: 'denver,co',
       finish: 'boulder,co',
       eta: 22,
-      weather: {temp: 23.5, weather: [{description: 'Nice and good'}]}
+      weather: { temp: 23.5, weather: [{ description: 'Nice and good' }] }
     }
 
-    expected = {:temperature=>23.5, :conditions=>"Nice and good"}
+    expected = { temperature: 23.5, conditions: 'Nice and good' }
     trip = RoadTrip.new(data)
 
     expect(trip).to be_a(RoadTrip)

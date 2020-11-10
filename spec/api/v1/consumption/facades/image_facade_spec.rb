@@ -3,14 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Image Facade' do
-
   it '.get_image(info)' do
     info = 'denver,co'
     result = ImageFacade.get_image(info)
     expect(result).to be_a(Hash)
 
     expect(result.keys).to eq(%i[query results])
-    expect(result[:query]).to eq("#{info}")
+    expect(result[:query]).to eq(info.to_s)
 
     expect(result[:results].keys).to eq(%i[total total_pages results])
 

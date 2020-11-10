@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecast Facade' do
-
   it '.get_weather_by_coordinates(info)' do
     info = 'denver,co'
     result = ForecastFacade.get_weather_by_coordinates(info)

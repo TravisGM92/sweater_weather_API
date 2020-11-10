@@ -5,9 +5,13 @@ module Api
     module RoadTrip
       class RoadTripController < ApplicationController
         def create
+          trip = RoadtripFacade.get_trip(params['origin'], params['destination'])
           result = User.check_key(params['api_key'])
-          if result
-            render json: RoadtripSerializer.new(RoadtripFacade.get_trip(params['origin'], params['destination']))
+          # require "pry"; binding.pry
+          if result && trip.class != Hash
+            render json: RoadtripSerializer.new(trip)
+          else
+            render json: RoadTripErrorSerializer.new(trip)
           end
         end
       end

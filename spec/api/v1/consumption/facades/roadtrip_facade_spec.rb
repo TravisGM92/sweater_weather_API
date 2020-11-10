@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Roadtrip Facade' do
-
   it '.format_coords(location)' do
     location = 'denver,co'
 
@@ -13,20 +12,20 @@ RSpec.describe 'Roadtrip Facade' do
   end
 
   it '.format_weather(data, eta)' do
-    #hourly
+    # hourly
     eta = 500
     data = {
-      :hourly => ['first hour', 'second hour']
+      hourly: ['first hour', 'second hour']
     }
     result = RoadtripFacade.format_weather(data, eta)
     expect(result).to be_a(String)
     expect(result).to eq('first hour')
-    #daily_and_hourly
+    # daily_and_hourly
 
-    eta2 = 86500
+    eta2 = 86_500
     data2 = {
-      :hourly => ['first hour', 'second hour'],
-      :daily => ['first day', 'second day']
+      hourly: ['first hour', 'second hour'],
+      daily: ['first day', 'second day']
     }
     result2 = RoadtripFacade.format_weather(data2, eta2)
     expect(result2).to be_a(String)
@@ -36,17 +35,16 @@ RSpec.describe 'Roadtrip Facade' do
   it '.get_hourly(data, eta)' do
     eta = 9000
     data = {
-      :hourly => ['first hour', 'second hour', 'third hour']
+      hourly: ['first hour', 'second hour', 'third hour']
     }
     result = RoadtripFacade.format_weather(data, eta)
     expect(result).to be_a(String)
     expect(result).to eq('second hour')
 
-    eta2 = 13000
+    eta2 = 13_000
     result2 = RoadtripFacade.format_weather(data, eta2)
     expect(result2).to eq('third hour')
   end
-
 
   it '.format_data(origin, finish, eta, weather)' do
     origin = 'denver,co'
@@ -75,9 +73,9 @@ RSpec.describe 'Roadtrip Facade' do
 
     expect(result).to be_a(RoadTrip)
     expect(result.end_city).to be_a(String)
-    expect(result.end_city).to eq("#{finish}")
+    expect(result.end_city).to eq(finish.to_s)
     expect(result.start_city).to be_a(String)
-    expect(result.start_city).to eq("#{origin}")
+    expect(result.start_city).to eq(origin.to_s)
     expect(result.weather_at_eta).to be_a(Hash)
     expect(result.weather_at_eta.keys).to eq(%i[temperature conditions])
     result.weather_at_eta.each do |key, value|
@@ -87,6 +85,5 @@ RSpec.describe 'Roadtrip Facade' do
         expect(value).to be_a(String)
       end
     end
-
   end
 end

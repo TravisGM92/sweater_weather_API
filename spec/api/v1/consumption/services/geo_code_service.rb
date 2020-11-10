@@ -22,11 +22,12 @@ RSpec.describe 'GeoCode API call' do
     expect(json['info'].keys).to eq(%w[statuscode copyright messages])
 
     json['info'].each do |key, value|
-      if key == 'statuscode'
+      case key
+      when 'statuscode'
         expect(value).to be_an(Integer)
-      elsif key == 'copyright'
+      when 'copyright'
         expect(value).to be_a(Hash)
-      elsif key == 'messages'
+      when 'messages'
         expect(value).to be_an(Array)
       end
     end
@@ -35,7 +36,7 @@ RSpec.describe 'GeoCode API call' do
       if key == 'providedLocation'
         value.each do |k, v|
           expect(k).to eq('location')
-          expect(v).to eq("#{info}")
+          expect(v).to eq(info.to_s)
         end
       else
         expect(value[0].keys.length).to eq(22)

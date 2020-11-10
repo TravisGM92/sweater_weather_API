@@ -20,12 +20,9 @@ RSpec.describe 'GeoCode API call' do
     expect(response.status).to eq(200)
     json = JSON.parse(response.body)
 
-
     expect(json.keys).to eq(%w[total total_pages results])
     json.each do |key, value|
-      if key != 'results'
-        expect(value).to be_an(Integer)
-      end
+      expect(value).to be_an(Integer) if key != 'results'
     end
     expect(json['results']).to be_an(Array)
     expect(json['results'].length).to eq(10)

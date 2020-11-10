@@ -23,7 +23,7 @@ module Api
         end
 
         def destroy
-          User.last.delete
+          User.where(email: 'whatever2@example.com').first.delete
         end
 
         private

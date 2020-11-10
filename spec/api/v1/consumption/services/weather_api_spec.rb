@@ -21,7 +21,6 @@ RSpec.describe 'Weather API call' do
     expect(json['timezone']).to be_a(String)
     expect(json['timezone_offset']).to_not be_a(String)
 
-
     json['current'].each do |key, value|
       if key != 'weather'
         expect(value).to_not be_a(String)

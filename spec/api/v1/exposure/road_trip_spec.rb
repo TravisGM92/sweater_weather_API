@@ -26,7 +26,7 @@ RSpec.describe 'RoadTrip API' do
     body = {
       "origin": 'Denver, CO',
       "destination": 'Estes Park, CO',
-      "api_key": 'pqgur7GArPri6QYBejOr9Att'
+      "api_key": '5nGvRsL7F02R0aniykYajwtt'
     }
 
     response = conn('/api/v1/road_trip').post do |request|
@@ -47,14 +47,13 @@ RSpec.describe 'RoadTrip API' do
     expect(json['data']['attributes']['weather_at_eta']).to be_a(Hash)
 
     expect(json['data']['attributes']['weather_at_eta'].keys).to eq(%w[temperature conditions])
-    expect(json['data']['attributes']['weather_at_eta']['temperature']).to be_a(Float)
+    expect(json['data']['attributes']['weather_at_eta']['temperature']).to_not be_a(String)
     expect(json['data']['attributes']['weather_at_eta']['conditions']).to be_a(String)
-
 
     body2 = {
       "origin": 'New York City, NY',
       "destination": 'Los Angeles, CA',
-      "api_key": 'pqgur7GArPri6QYBejOr9Att'
+      "api_key": '5nGvRsL7F02R0aniykYajwtt'
     }
 
     # for a trip longer than 1 day
@@ -99,7 +98,7 @@ RSpec.describe 'RoadTrip API' do
     body = {
       "origin": 'Denver, CO',
       "destination": 'London, UK',
-      "api_key": 'pqgur7GArPri6QYBejOr9Att'
+      "api_key": '5nGvRsL7F02R0aniykYajwtt'
     }
 
     response = conn('/api/v1/road_trip').post do |request|
@@ -107,8 +106,14 @@ RSpec.describe 'RoadTrip API' do
     end
 
     json = JSON.parse(response.body)
+    expect(json['id']).to be_nil
+    expect(json.keys).to eq(%w[data])
+    expect(json['data'].keys).to eq(%w[id type attributes])
+    expect(json['data']['attributes'].keys).to eq(%w[start_city end_city travel_time weather_at_eta])
 
-
-
+    expect(json['data']['attributes']['start_city']).to eq((body[:origin]).to_s)
+    expect(json['data']['attributes']['end_city']).to eq((body[:destination]).to_s)
+    expect(json['data']['attributes']['travel_time']).to eq('impossible')
+    expect(json['data']['attributes']['weather_at_eta']).to eq([])
   end
 end

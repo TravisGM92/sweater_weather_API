@@ -26,6 +26,7 @@ class RoadtripFacade
 
   def self.get_hourly(data, eta)
     time = (eta / 3600).floor
+    time -= 1 if time > 0
     data[:hourly][time]
   end
 

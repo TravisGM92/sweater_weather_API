@@ -29,22 +29,64 @@ RSpec.describe 'Roadtrip Facade' do
       :daily => ['first day', 'second day']
     }
     result2 = RoadtripFacade.format_weather(data2, eta2)
-    require "pry"; binding.pry
+    expect(result2).to be_a(String)
+    expect(result2).to eq('first day')
   end
 
   it '.get_hourly(data, eta)' do
+    eta = 9000
+    data = {
+      :hourly => ['first hour', 'second hour', 'third hour']
+    }
+    result = RoadtripFacade.format_weather(data, eta)
+    expect(result).to be_a(String)
+    expect(result).to eq('second hour')
 
-
+    eta2 = 13000
+    result2 = RoadtripFacade.format_weather(data, eta2)
+    expect(result2).to eq('third hour')
   end
 
 
   it '.format_data(origin, finish, eta, weather)' do
+    origin = 'denver,co'
+    finish = 'los angeles,ca'
+    eta = 9000
+    weather = 'vey nice weather'
 
+    result = RoadtripFacade.format_data(origin, finish, eta, weather)
 
+    expect(result).to be_a(Hash)
+    expect(result.keys).to eq(%i[start finish eta weather])
+    result.each do |key, value|
+      if key != :eta
+        expect(value).to be_a(String)
+      else
+        expect(value).to be_an(Integer)
+      end
+    end
   end
 
   it '.get_trip(origin, finish)' do
+    origin = 'denver,co'
+    finish = 'los angeles,ca'
 
+    result = RoadtripFacade.get_trip(origin, finish)
+
+    expect(result).to be_a(RoadTrip)
+    expect(result.end_city).to be_a(String)
+    expect(result.end_city).to eq("#{finish}")
+    expect(result.start_city).to be_a(String)
+    expect(result.start_city).to eq("#{origin}")
+    expect(result.weather_at_eta).to be_a(Hash)
+    expect(result.weather_at_eta.keys).to eq(%i[temperature conditions])
+    result.weather_at_eta.each do |key, value|
+      if key == :temperature
+        expect(value).to be_a(Float)
+      else
+        expect(value).to be_a(String)
+      end
+    end
 
   end
 end

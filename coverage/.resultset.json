@@ -1,6 +1,158 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/roadtrip_facade.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          5,
+          4,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/geo_code_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/map_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/forecast_service.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/road_trip.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/api_key.rb": {
         "lines": [
           null,
@@ -262,57 +414,6 @@
         "branches": {
         }
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/roadtrip_facade.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/trail_facade.rb": {
         "lines": [
           null,
@@ -394,46 +495,6 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/road_trip.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0,
@@ -636,29 +697,6 @@
         "branches": {
         }
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/map_service.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/image_service.rb": {
         "lines": [
           null,
@@ -681,55 +719,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/geo_code_service.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/services/forecast_service.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1605027788
+    "timestamp": 1605028989
   }
 }

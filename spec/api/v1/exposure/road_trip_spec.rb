@@ -22,7 +22,7 @@ RSpec.describe 'RoadTrip API' do
     # if database is reset, have to create a new user by uncommenting above lines
 
     # trip shorter than 1 day
-    
+
     body = {
       "origin": 'Denver, CO',
       "destination": 'Estes Park, CO',
@@ -93,5 +93,22 @@ RSpec.describe 'RoadTrip API' do
 
     expect(response.status).to eq(400)
     expect(response.body).to eq('"Required information missing or incorrect"')
+  end
+
+  it 'still sends back response with specific attributes even if trip is impossible' do
+    body = {
+      "origin": 'Denver, CO',
+      "destination": 'London, UK',
+      "api_key": 'pqgur7GArPri6QYBejOr9Att'
+    }
+
+    response = conn('/api/v1/road_trip').post do |request|
+      request.body = body
+    end
+
+    json = JSON.parse(response.body)
+
+
+
   end
 end

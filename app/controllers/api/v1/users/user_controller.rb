@@ -22,6 +22,10 @@ module Api
           end
         end
 
+        def destroy
+          User.where(email: 'whatever2@example.com').first.delete
+        end
+
         private
 
         def user_params

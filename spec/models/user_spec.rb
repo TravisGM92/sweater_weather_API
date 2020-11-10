@@ -34,5 +34,13 @@ describe User, type: :model do
       expect(User.check_params(data)).to eq(false)
       expect(User.check_params(data2)).to eq(true)
     end
+
+    it 'self.check_key(key)' do
+      result = User.check_key('8879')
+      expect(result).to eq(false)
+
+      user = User.create!(email: 'yessire@email.com', password: 'yep')
+      expect(User.check_key(user.api_key.to_s)).to eq(true)
+    end
   end
 end

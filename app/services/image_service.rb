@@ -13,5 +13,5 @@ class ImageService
     end
     { query: info,
       results: JSON.parse(response.body, symbolize_names: true) }
-    end
   end
+end

@@ -126,8 +126,6 @@
           0,
           null,
           0,
-          0,
-          0,
           null,
           0,
           0,
@@ -397,6 +395,8 @@
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/road_trip.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -435,8 +435,9 @@
       },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/hike.rb": {
         "lines": [
-          0,
           null,
+          null,
+          0,
           0,
           0,
           0,
@@ -730,6 +731,6 @@
         }
       }
     },
-    "timestamp": 1604970654
+    "timestamp": 1604976028
   }
 }

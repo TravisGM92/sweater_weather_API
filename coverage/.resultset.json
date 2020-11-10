@@ -1,6 +1,44 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/road_trip.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/models/api_key.rb": {
         "lines": [
           null,
@@ -393,59 +431,6 @@
         "branches": {
         }
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/road_trip.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/hike.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/hourly_weather.rb": {
         "lines": [
           null,
@@ -731,6 +716,6 @@
         }
       }
     },
-    "timestamp": 1604979385
+    "timestamp": 1604980400
   }
 }

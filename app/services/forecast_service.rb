@@ -8,7 +8,7 @@ class ForecastService
   def self.get_weather(coords)
     lat = coords.split(', ')[0].to_f
     lon = coords.split(', ')[1].to_f
-    response = conn.get("data/2.5/onecall") do |req|
+    response = conn.get('data/2.5/onecall') do |req|
       req.params[:lat] = lat
       req.params[:lon] = lon
       req.params[:exclude] = 'minutely'

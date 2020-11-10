@@ -19,12 +19,12 @@ RSpec.describe 'RoadTrip API' do
     #   request.body = body1
     # end
 
-  # if database is reset, have to create a new user by uncommenting above lines
+    # if database is reset, have to create a new user by uncommenting above lines
 
     body = {
       "origin": 'Denver, CO',
       "destination": 'Estes Park, CO',
-      "api_key": "EFi8FSk6Efm2azGclIHrLAtt"
+      "api_key": 'EFi8FSk6Efm2azGclIHrLAtt'
     }
 
     response = conn('/api/v1/road_trip').post do |request|
@@ -47,7 +47,6 @@ RSpec.describe 'RoadTrip API' do
     expect(json['data']['attributes']['weather_at_eta'].keys).to eq(%w[temperature conditions])
     expect(json['data']['attributes']['weather_at_eta']['temperature']).to be_a(Float)
     expect(json['data']['attributes']['weather_at_eta']['conditions']).to be_a(String)
-
   end
 
   it 'lack of API key returns 401 code' do

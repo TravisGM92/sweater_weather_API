@@ -9,7 +9,6 @@ RSpec.describe 'User registration API' do
   end
 
   it 'successful API call registers a new user' do
-
     body = {
       "email": 'whatever2@example.com',
       "password": 'password',
@@ -29,7 +28,7 @@ RSpec.describe 'User registration API' do
       expect(attr).to be_a(String)
     end
 
-    delete_response = conn('/api/v1/users').delete
+    conn('/api/v1/users').delete
   end
 
   it 'duplicate email address API call returns 403 code and description for error' do

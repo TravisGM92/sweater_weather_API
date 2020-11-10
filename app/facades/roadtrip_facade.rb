@@ -17,7 +17,7 @@ class RoadtripFacade
   end
 
   def self.format_weather(data, eta)
-    if eta < 86400
+    if eta < 86_400
       get_hourly(data, eta)
     else
       get_daily_and_hourly(data)
@@ -25,7 +25,7 @@ class RoadtripFacade
   end
 
   def self.get_hourly(data, eta)
-    time = (eta/3600).floor
+    time = (eta / 3600).floor
     data[:hourly][time]
   end
 

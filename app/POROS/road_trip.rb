@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoadTrip
   attr_reader :start_city,
               :end_city,
@@ -13,11 +15,11 @@ class RoadTrip
 
   def format_time(data)
     result = ((data.to_f / 60) / 60)
-    minute = (60 * (result.modulo(1)))
+    minute = (60 * result.modulo(1))
     if result >= 1 && result < 2
       "#{result.floor} hour and #{minute.round(0)} minutes"
     elsif result < 1
-      "#{(result * 60)} minutes"
+      "#{result * 60} minutes"
     else
       "#{result.floor} hours and #{minute.round(0)} minutes"
     end

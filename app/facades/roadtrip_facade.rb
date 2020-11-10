@@ -20,13 +20,18 @@ class RoadtripFacade
     if eta < 86_400
       get_hourly(data, eta)
     else
-      get_daily_and_hourly(data)
+      get_daily(data, eta)
     end
   end
 
   def self.get_hourly(data, eta)
     time = (eta / 3600).floor
     data[:hourly][time]
+  end
+
+  def self.get_daily(data, eta)
+    days = ((eta.to_f / 86400).round(0) - 1)
+    data[:daily][days]
   end
 
   def self.format_data(origin, finish, eta, weather)

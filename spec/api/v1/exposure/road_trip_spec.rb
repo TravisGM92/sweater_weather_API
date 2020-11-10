@@ -21,10 +21,12 @@ RSpec.describe 'RoadTrip API' do
 
     # if database is reset, have to create a new user by uncommenting above lines
 
+    # trip shorter than 1 day
+    
     body = {
       "origin": 'Denver, CO',
       "destination": 'Estes Park, CO',
-      "api_key": 'EFi8FSk6Efm2azGclIHrLAtt'
+      "api_key": 'pqgur7GArPri6QYBejOr9Att'
     }
 
     response = conn('/api/v1/road_trip').post do |request|
@@ -47,6 +49,36 @@ RSpec.describe 'RoadTrip API' do
     expect(json['data']['attributes']['weather_at_eta'].keys).to eq(%w[temperature conditions])
     expect(json['data']['attributes']['weather_at_eta']['temperature']).to be_a(Float)
     expect(json['data']['attributes']['weather_at_eta']['conditions']).to be_a(String)
+
+
+    body2 = {
+      "origin": 'New York City, NY',
+      "destination": 'Los Angeles, CA',
+      "api_key": 'pqgur7GArPri6QYBejOr9Att'
+    }
+
+    # for a trip longer than 1 day
+
+    response2 = conn('/api/v1/road_trip').post do |request|
+      request.body = body2
+    end
+
+    json2 = JSON.parse(response2.body)
+
+    expect(response.status).to eq(200)
+    expect(json2.keys).to eq(['data'])
+    expect(json2['data']['id']).to be_nil
+    expect(json2['data']['type']).to eq('roadtrip')
+    expect(json2['data'].keys).to eq(%w[id type attributes])
+    expect(json2['data']['attributes'].keys).to eq(%w[start_city end_city travel_time weather_at_eta])
+    expect(json2['data']['attributes']['start_city']).to be_a(String)
+    expect(json2['data']['attributes']['end_city']).to be_a(String)
+    expect(json2['data']['attributes']['travel_time']).to be_a(String)
+    expect(json2['data']['attributes']['weather_at_eta']).to be_a(Hash)
+
+    expect(json2['data']['attributes']['weather_at_eta'].keys).to eq(%w[temperature conditions])
+    expect(json2['data']['attributes']['weather_at_eta']['temperature']).to be_a(Float)
+    expect(json2['data']['attributes']['weather_at_eta']['conditions']).to be_a(String)
   end
 
   it 'lack of API key returns 401 code' do

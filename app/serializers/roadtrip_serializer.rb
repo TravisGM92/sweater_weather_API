@@ -14,9 +14,16 @@ class RoadtripSerializer
   attribute :travel_time, &:travel_time
 
   attribute :weather_at_eta do |data|
-    {
-      'temperature': data.weather_at_eta[:temperature],
-      'conditions': data.weather_at_eta[:conditions]
-    }
+    if data.weather_at_eta[:temperature].class != Hash
+      {
+        'temperature': data.weather_at_eta[:temperature],
+        'conditions': data.weather_at_eta[:conditions]
+      }
+    else
+      {
+        'temperature': data.weather_at_eta[:temperature][:day],
+        'conditions': data.weather_at_eta[:conditions]
+      }
+    end
   end
 end

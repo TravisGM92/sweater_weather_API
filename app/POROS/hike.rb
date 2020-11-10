@@ -1,4 +1,4 @@
-class CreateHike
+class Hike
 
   def initialize(data)
     require "pry"; binding.pry

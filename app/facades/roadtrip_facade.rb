@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-class TripFacade
+class RoadtripFacade
   def self.get_trip(origin, finish)
     result = MapService.get_distance(origin, finish)
     arrival_coords = format_coords(finish)
     eta = result[:route][:realTime]
     weather = format_weather(ForecastService.get_weather(arrival_coords), eta)
-    format_data(origin, finish, eta, weather)
+    RoadTrip.new(format_data(origin, finish, eta, weather))
   end
 
   def self.format_coords(location)
@@ -30,6 +30,11 @@ class TripFacade
   end
 
   def self.format_data(origin, finish, eta, weather)
-    require "pry"; binding.pry
+    {
+      'start': origin,
+      'finish': finish,
+      'eta': eta,
+      'weather': weather
+    }
   end
 end

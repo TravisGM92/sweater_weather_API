@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Road trip API' do
+RSpec.describe 'RoadTrip API' do
   def conn(uri)
     url = ENV['RAILS_ENGINE_DOMAIN'] + uri
     Faraday.new(url)
@@ -18,7 +18,7 @@ RSpec.describe 'Road trip API' do
     # response = conn('/api/v1/users').post do |request|
     #   request.body = body1
     # end
-    
+
   # if database is reset, have to create a new user by uncommenting above lines
 
     body = {
@@ -39,12 +39,15 @@ RSpec.describe 'Road trip API' do
     expect(json['data']['type']).to eq('roadtrip')
     expect(json['data'].keys).to eq(%w[id type attributes])
     expect(json['data']['attributes'].keys).to eq(%w[start_city end_city travel_time weather_at_eta])
-    json['data']['attributes'].each_value do |attr|
-      expect(attr).to be_a(String)
-    end
+    expect(json['data']['attributes']['start_city']).to be_a(String)
+    expect(json['data']['attributes']['end_city']).to be_a(String)
+    expect(json['data']['attributes']['travel_time']).to be_a(String)
+    expect(json['data']['attributes']['weather_at_eta']).to be_a(Hash)
+
     expect(json['data']['attributes']['weather_at_eta'].keys).to eq(%w[temperature conditions])
     expect(json['data']['attributes']['weather_at_eta']['temperature']).to be_a(Float)
     expect(json['data']['attributes']['weather_at_eta']['conditions']).to be_a(String)
+
   end
 
   it 'lack of API key returns 401 code' do

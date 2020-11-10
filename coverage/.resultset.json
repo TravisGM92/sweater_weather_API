@@ -110,6 +110,36 @@
         "branches": {
         }
       },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/roadtrip_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/serializers/user_serializer.rb": {
         "lines": [
           null,
@@ -227,6 +257,52 @@
         "branches": {
         }
       },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/roadtrip_facade.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/trail_facade.rb": {
         "lines": [
           null,
@@ -286,47 +362,6 @@
         "branches": {
         }
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/facades/trip_facade.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/current_weather.rb": {
         "lines": [
           null,
@@ -360,7 +395,45 @@
         "branches": {
         }
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/create_hike.rb": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/road_trip.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/POROS/hike.rb": {
         "lines": [
           0,
           null,
@@ -541,7 +614,7 @@
         "branches": {
         }
       },
-      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/road_trip/trip_controller.rb": {
+      "/Users/travisgm/turing/3module/projects/final_proj/sweater_weather/app/controllers/api/v1/road_trip/road_trip_controller.rb": {
         "lines": [
           null,
           null,
@@ -657,6 +730,6 @@
         }
       }
     },
-    "timestamp": 1604962954
+    "timestamp": 1604970654
   }
 }

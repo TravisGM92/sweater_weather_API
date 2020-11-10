@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         delete '/', to: 'user#destroy'
       end
       namespace :road_trip do
-        post '/', to: 'trip#create'
+        post '/', to: 'road_trip#create'
       end
     end
   end

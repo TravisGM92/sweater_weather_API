@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-describe CreateHike do
-  it 'Creates a CreateHike object with specific attributes' do
+describe Hike do
+  it 'Creates a Hike object with specific attributes' do
     data = {
     "trails": [
         {
@@ -259,7 +259,7 @@ describe CreateHike do
     ],
     "success": 1
 }
-    hike = CreateHike.new(data)
+    hike = Hike.new(data)
 
   end
 end

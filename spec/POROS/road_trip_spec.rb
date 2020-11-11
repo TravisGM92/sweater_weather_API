@@ -24,7 +24,7 @@ describe RoadTrip do
       start: 'denver,co',
       finish: 'los angeles,ca',
       eta: 7000,
-      weather: {temp: 25, weather: [{ description: 'Nice and cold'}]}
+      weather: { temp: 25, weather: [{ description: 'Nice and cold' }] }
     }
     trip2 = RoadTrip.new(data2)
 

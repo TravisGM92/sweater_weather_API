@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'RoadTripError Serializer' do
@@ -17,9 +19,9 @@ RSpec.describe 'RoadTripError Serializer' do
     expect(response[:data][:attributes]).to be_a(Hash)
 
     expect(response[:data][:attributes].keys).to eq(%i[start_city end_city travel_time weather_at_eta])
-    expect(response[:data][:attributes][:start_city]).to eq("#{data[:origin]}")
-    expect(response[:data][:attributes][:end_city]).to eq("#{data[:finish]}")
-    expect(response[:data][:attributes][:travel_time]).to eq("impossible")
+    expect(response[:data][:attributes][:start_city]).to eq((data[:origin]).to_s)
+    expect(response[:data][:attributes][:end_city]).to eq((data[:finish]).to_s)
+    expect(response[:data][:attributes][:travel_time]).to eq('impossible')
     expect(response[:data][:attributes][:weather_at_eta]).to eq([])
   end
 end

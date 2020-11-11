@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User controller' do
   describe 'methods' do
-    it '.destroy' do
+    it '.create' do
       def conn(uri)
         url = ENV['RAILS_ENGINE_DOMAIN'] + uri
         Faraday.new(url)

@@ -86,4 +86,14 @@ RSpec.describe 'Roadtrip Facade' do
       end
     end
   end
+
+  it '.get_trip(origin, finish), else option' do
+    origin = 'denver,co'
+    finish = 'london,uk'
+
+    result = RoadtripFacade.get_trip(origin, finish)
+    expect(result).to be_a(Hash)
+    expect(result.keys).to eq(%i[error origin finish])
+    expect(result[:error][:messages]).to eq(['We are unable to route with the given locations.'])
+  end
 end

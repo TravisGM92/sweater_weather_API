@@ -19,5 +19,15 @@ describe RoadTrip do
     expect(trip.end_city).to eq(data[:finish])
     expect(trip.travel_time).to be_a(String)
     expect(trip.weather_at_eta).to eq(expected)
+
+    data2 = {
+      start: 'denver,co',
+      finish: 'los angeles,ca',
+      eta: 7000,
+      weather: {temp: 25, weather: [{ description: 'Nice and cold'}]}
+    }
+    trip2 = RoadTrip.new(data2)
+
+    expect(trip2.travel_time.include?('hour')).to eq(true)
   end
 end

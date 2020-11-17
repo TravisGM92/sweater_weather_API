@@ -10,7 +10,7 @@ RSpec.describe 'User registration API' do
 
   it 'successful API call registers a new user' do
     body = {
-      "email": 'whatever2@example.com',
+      "email": 'whatever20@example.com',
       "password": 'password',
       "password_confirmation": 'password'
     }
@@ -18,6 +18,7 @@ RSpec.describe 'User registration API' do
     response = conn('/api/v1/users').post do |request|
       request.body = body
     end
+
     json = JSON.parse(response.body)
 
     expect(response.status).to eq(200)

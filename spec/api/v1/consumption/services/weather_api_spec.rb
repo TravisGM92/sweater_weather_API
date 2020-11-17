@@ -15,18 +15,20 @@ RSpec.describe 'Weather API call' do
 
     expect(response.status).to eq(200)
     json = JSON.parse(response.body)
-    expect(json.keys).to eq(%w[lat lon timezone timezone_offset current hourly daily])
-    expect(json['lat']).to_not be_a(String)
-    expect(json['lon']).to_not be_a(String)
+    expect(json.keys).to eq(%w[lat lon timezone timezone_offset current hourly daily alerts])
+    expect(json['lat']).to be_a(Numeric)
+    expect(json['lon']).to be_a(Numeric)
     expect(json['timezone']).to be_a(String)
-    expect(json['timezone_offset']).to_not be_a(String)
+    expect(json['timezone_offset']).to be_a(Numeric)
 
     json['current'].each do |key, value|
-      if key != 'weather'
-        expect(value).to_not be_a(String)
+      if key != 'weather' && key != 'rain'
+        expect(value).to be_a(Numeric)
         expect(value).to_not be_nil
-      else
+      elsif key == 'weather'
         expect(value).to be_an(Array)
+      else
+        expect(value).to be_a(Hash)
       end
     end
 
@@ -52,7 +54,6 @@ RSpec.describe 'Weather API call' do
         expect(day.keys.include?(name)).to eq(true)
         expect(day.keys.include?('sunrise')).to eq(true)
         expect(day.keys.include?('sunset')).to eq(true)
-        expect(day.keys.include?('uvi')).to eq(true)
         expect(day.keys.include?('clouds')).to eq(true)
         expect(day.keys.include?('pop')).to eq(true)
       end

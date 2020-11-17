@@ -15,9 +15,13 @@ class RoadtripFacade
 
   def self.format_coords(location)
     result = GeoCodeService.get_coordinates(location)
-    lat = result[:results][0][:locations][0][:latLng][:lat]
-    lon = result[:results][0][:locations][0][:latLng][:lng]
-    "#{lat}, #{lon}"
+    if result.first.class != Coordinates
+      lat = result[:results][0][:locations][0][:latLng][:lat]
+      lon = result[:results][0][:locations][0][:latLng][:lng]
+      "#{lat}, #{lon}"
+    else
+      result
+    end
   end
 
   def self.format_weather(data, eta)

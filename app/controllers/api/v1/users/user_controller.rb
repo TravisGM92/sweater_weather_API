@@ -5,25 +5,15 @@ module Api
     module Users
       class UserController < ApplicationController
         def create
-          if !User.check_params(user_params)
-            self.status = 400
-            self.response_body = 'Required information missing or incorrect'.to_json
-            ErrorSerializer.new(user_params)
-          elsif User.check_email(user_params)
-            self.status = 403
-            self.response_body = 'Credentials are bad'.to_json
-            ErrorSerializer.new(user_params).to_json
-          elsif user_params.values.any?('') || user_params[:password] != user_params[:password_confirmation]
-            self.status = 422
-            self.response_body = 'Required information missing'
-            ErrorSerializer.new(user_params)
-          else
+          if User.validate_info(user_params, self)
             render json: UserSerializer.new(User.create!(user_params))
+          else
+            User.send_correct_error(user_params, self)
           end
         end
 
         def destroy
-          User.where(email: 'whatever2@example.com').first.delete
+          User.where(email: 'whatever20@example.com').first.delete
         end
 
         private

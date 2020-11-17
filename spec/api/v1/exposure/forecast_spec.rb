@@ -52,7 +52,7 @@ RSpec.describe 'Forecast API has multiple attributes' do
               if strings.include?(key2)
                 expect(value2).to be_a(String)
               else
-                expect(value2).to_not be_a(String)
+                expect(value2).to be_a(Numeric)
               end
             end
           when 'daily_weather'
@@ -63,7 +63,7 @@ RSpec.describe 'Forecast API has multiple attributes' do
                   # expect forecast['data']['attributes']['daily_weather'] keys to be specific class
                   expect(value3).to be_a(String)
                 else
-                  expect(value3).to_not be_a(String)
+                  expect(value3).to be_a(Numeric)
                 end
               end
             end
@@ -75,7 +75,7 @@ RSpec.describe 'Forecast API has multiple attributes' do
                   # expect forecast['data']['attributes']['hourly_weather'] keys to be specific class
                   expect(value4).to be_a(String)
                 else
-                  expect(value4).to_not be_a(String)
+                  expect(value4).to be_a(Numeric)
                 end
               end
             end

@@ -20,6 +20,30 @@ class User < ApplicationRecord
     !User.where(api_key: key).empty?
   end
 
+  def self.validate_info(data, obj)
+    if !check_params(data) || check_email(data) || data.values.any?('') || data[:password] != data[:password_confirmation]
+      false
+    else
+      true
+    end
+  end
+
+  def self.send_correct_error(data, obj)
+    if !User.check_params(data)
+      obj.status = 400
+      obj.response_body = 'Required information missing or incorrect'.to_json
+      ErrorSerializer.new(data)
+    elsif User.check_email(data)
+      obj.status = 403
+      obj.response_body = 'Credentials are bad'.to_json
+      ErrorSerializer.new(data).to_json
+    elsif data.values.any?('') || data[:password] != data[:password_confirmation]
+      obj.status = 422
+      obj.response_body = 'Required information missing'
+      ErrorSerializer.new(data)
+    end
+  end
+
   private
 
   def set_api_key

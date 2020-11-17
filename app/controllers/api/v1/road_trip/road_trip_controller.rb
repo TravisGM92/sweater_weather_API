@@ -7,7 +7,6 @@ module Api
         def create
           trip = RoadtripFacade.get_trip(params['origin'], params['destination'])
           result = User.check_key(params['api_key'])
-          # require "pry"; binding.pry
           if result && trip.class != Hash
             render json: RoadtripSerializer.new(trip)
           else

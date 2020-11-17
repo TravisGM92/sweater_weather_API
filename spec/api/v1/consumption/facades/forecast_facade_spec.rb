@@ -12,7 +12,7 @@ RSpec.describe 'Forecast Facade' do
 
     result[:current].each do |key, value|
       if key != :weather
-        expect(value).to_not be_a(String)
+        expect(value).to be_a(Numeric)
         expect(value).to_not be_nil
       else
         expect(value).to be_an(Array)
@@ -25,7 +25,6 @@ RSpec.describe 'Forecast Facade' do
         expect(day.keys.include?(name)).to eq(true)
         expect(day.keys.include?(:sunrise)).to eq(true)
         expect(day.keys.include?(:sunset)).to eq(true)
-        expect(day.keys.include?(:uvi)).to eq(true)
       end
       result[:hourly].each do |hour|
         expect(hour.keys.include?(name)).to eq(true)

@@ -11,7 +11,7 @@ RSpec.describe 'User controller' do
       end
 
       body = {
-        "email": 'whatever2@example.com',
+        "email": 'whatever20@example.com',
         "password": 'password',
         "password_confirmation": 'password'
       }
